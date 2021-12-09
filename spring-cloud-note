@@ -1,0 +1,8 @@
+DelegatingFilterProxy 核心方法doFilter -》initDelegate获取类似springSecurityFilterChain过滤器并返回FilterChainProxy
+create table USER_MANAGE_TEST(
+    USER_NAME VARCHAR(20) PRIMARY KEY NOT NULL ,
+    USER_PASSWORD VARCHAR(50) NOT NULL,
+    USER_TYPE CHAR(1) NOT NULL
+);
+INSERT  INTO USER_MANAGE_TEST VALUES('tangtiancong','123456','1');
+COMMIT;

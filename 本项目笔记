@@ -1,0 +1,5 @@
+1：spring security提供的过滤机制：FilterChainProxy
+2：实现WebSecurityConfigurerAdapter接口重写configure(HttpSecurity http)方法可 设置默认登陆页面 及对请求进行认证或权限控制。
+3：@EnableWebSecurity通过该注解启用spring security
+4: 实现UserDetailsService并重写loadUserByUsername方法实现 自定义用户名、密码方式认证。
+5：CustomEnvironmentInit 类在加载springboot配置之前加入自定义配置文件，注意需要在spring.factories文件指定该类

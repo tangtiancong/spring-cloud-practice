@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tang.userserver.mapper.userMapper.UserMapper">
+    <resultMap id="mb_user" type="com.tang.userserver.Dao.UserDao.UserInfo">
+        <id property="username" column="USER_NAME"></id>
+        <result property="password"  column="USER_PASSWORD"></result>
+        <result property="userType"  column="USER_TYPE"></result>
+    </resultMap>
+    <!--    查询用户信息-->
+    <select id="getUser" resultMap="mb_user" parameterType="java.lang.String">
+        select USER_NAME,USER_PASSWORD,USER_TYPE
+        from USER_MANAGE_TEST
+        where USER_NAME = #{username}
+    </select>
+    <!--    注册用户-->
+    <insert id="setUser"  parameterType="com.tang.userserver.Dao.UserDao.UserInfo">
+        insert  into USER_MANAGE_TEST
+            values(#{username},#{password},#{userType})
+
+    </insert>
+</mapper>
